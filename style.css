@@ -1,0 +1,405 @@
+:root {
+    --bg-color: #134e4a;
+    --bg-light-color: #e2e8f0;
+    font-size: 16px
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+p {
+    color: #52525b
+}
+
+.contact:has(p)>p {
+    color: var(--bg-light-color)
+}
+
+html,
+body {
+    min-width: 280px;
+    height: 100vh;
+    display: flex;
+    flex: 1;
+    flex-direction: column
+}
+
+header,
+main,
+footer {
+    width: 100%;
+    align-self: center;
+    min-width: 280px;
+    padding: 2rem 4rem
+}
+
+header {
+    background: linear-gradient(170deg, var(--bg-color) 0px 385px, var(--bg-light-color) 390px 990px)
+}
+
+.header-card {
+    display: flex
+}
+
+.header-img {
+    display: flex;
+    align-self: flex-start;
+    position: relative
+}
+
+.header-img>img {
+    display: flex;
+    float: left;
+    width: calc(18.5rem);
+    height: calc(21rem);
+    box-shadow: 10px 10px 6px -4px rgba(0, 0, 0, 0.35);
+    object-fit: cover
+}
+
+.image-text {
+    position: absolute;
+    bottom: 0.1rem;
+    width: 100%;
+    color: var(--bg-light-color);
+    text-shadow: 1px 1px 2px #000;
+    text-align: center;
+    font-size: 2.5rem
+}
+
+.about {
+    flex-grow: 1;
+    margin: 2rem 0rem;
+    padding: 1rem 4rem 1rem 1rem;
+    box-shadow: 10px 7px 10px -1px rgba(0, 0, 0, 0.25);
+    background-color: var(--bg-light-color)
+}
+
+.about>:is(h1, p) {
+    padding: 1rem
+}
+
+.about>.icons {
+    display: flex;
+    justify-content: flex-end
+}
+
+.icons>a {
+    text-decoration: none
+}
+
+.card a>:is(svg, img) {
+    margin: 0
+}
+
+a>:is(svg, img) {
+    margin: 4px;
+    height: 24px;
+    width: 24px
+}
+
+.contact-content>.icons>a>:is(img, svg) {
+    margin: 8px;
+    height: 32px;
+    width: 32px
+}
+
+main {
+    background-color: var(--bg-light-color);
+    display: inline;
+    flex: 1;
+    flex-direction: column
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16.5rem, 2fr));
+    gap: 2rem
+}
+
+.card {
+    box-shadow: 6px 4px 6px 0px rgba(0, 0, 0, 0.25);
+    padding-bottom: 2rem
+}
+
+.card:hover {
+    transition: opacity 0.5s;
+    opacity: 0.9
+}
+
+.card>.img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: calc(10vw + 10rem);
+    padding: 2rem;
+    color: var(--bg-light-color);
+    font-size: 2.5rem;
+    text-align: center
+}
+
+.card:first-child>.img {
+    background-color: #7f1d1d
+}
+
+.card:nth-child(2)>.img {
+    background-color: #312e81
+}
+
+.card:nth-child(3)>.img {
+    background-color: #3f6212
+}
+
+.card:nth-child(4)>.img {
+    background-color: #701a75
+}
+
+.card:nth-child(5)>.img {
+    background-color: #c2410c
+}
+
+.card:nth-child(6)>.img {
+    background-color: #0369a1
+}
+
+.card>.header,
+.card>.description {
+    margin: 1rem 2rem;
+    display: flex
+}
+
+.card .icons,
+.card .header {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem
+}
+
+footer {
+    max-height: 500px;
+    background-color: var(--bg-color);
+    display: flex;
+    flex: 1;
+    flex-flow: row;
+    justify-content: space-between;
+    color: var(--bg-light-color)
+}
+
+.footer-img>img {
+    display: flex;
+    flex: 1;
+    width: 40rem;
+    height: 28rem;
+    object-fit: cover
+}
+
+.tel::before {
+    display: inline-block;
+    vertical-align: center;
+    position: relative;
+    filter: invert();
+    content: " ";
+    top: 8px;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    background: url(assets/phone-outline.svg)
+}
+
+.email::before {
+    display: inline-block;
+    vertical-align: center;
+    position: relative;
+    filter: invert();
+    content: " ";
+    top: 8px;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    background: url(assets/email-outline.svg)
+}
+
+a>:is(svg, img):hover {
+    transition: all 0.3s ease-out;
+    opacity: 0.6;
+    transform: scale(1.1)
+}
+
+@media (max-width:1000px) {
+    .about>.icons {
+        display: none
+    }
+
+    .header-img {
+        display: none
+    }
+
+    .header-card {
+        padding: 2rem 2rem 0rem
+    }
+
+    header,
+    main {
+        padding: 2rem 5rem
+    }
+
+    .about-img {
+        display: flex;
+        float: left;
+        position: relative;
+        left: -48px;
+        top: -24px;
+        width: 26vw;
+        height: 30vw;
+        scale: 1.35
+    }
+
+    .about-img>img {
+        width: 26vw;
+        height: 28vw;
+        object-fit: cover;
+        margin-right: 0.25rem;
+        margin-bottom: 0.25rem
+    }
+
+    .image-text {
+        display: flex;
+        position: relative;
+        top: -2rem
+    }
+
+    .about {
+        padding: 1rem
+    }
+
+    .about>h1 {
+        text-indent: 1rem
+    }
+
+    .about>h1::before {
+        position: absolute;
+        top: 2.5rem;
+        margin-left: -7rem;
+        content: "Ashley Williams";
+        color: var(--bg-light-color);
+        text-shadow: 1px 1px 2px #000;
+        font-size: 3rem;
+        font-weight: 400
+    }
+
+    .icons>a>:is(img, svg) {
+        margin: 0
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(16rem, 2fr));
+        gap: 2rem
+    }
+
+    .card> :is(.header, .description) {
+        margin: 1rem
+    }
+
+    .footer-img>img {
+        width: 30vw;
+        height: 36vw;
+        object-fit: cover
+    }
+}
+
+@media (max-width:600px) {
+
+    header,
+    main,
+    .contact-content {
+        padding: 2rem 1rem
+    }
+
+    footer,
+    .about,
+    .header-card {
+        padding: 0
+    }
+
+    .about>h1 {
+        text-indent: 0
+    }
+
+    h1 {
+        text-align: center
+    }
+
+    h1::before {
+        display: none
+    }
+
+    .header-card {
+        flex: 1;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-content: center
+    }
+
+    .header-img {
+        display: inline-flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-content: center
+    }
+
+    .header-img>img {
+        width: 28rem;
+        height: 30rem;
+        max-width: 90vw;
+        max-height: 90vw
+    }
+
+    .header-img::after {
+        position: absolute;
+        bottom: 0;
+        content: "Ashley Williams";
+        color: var(--bg-light-color);
+        text-shadow: 1px 1px 2px #000;
+        font-size: 4rem
+    }
+
+    .about {
+        box-shadow: none
+    }
+
+    .image-text {
+        display: none
+    }
+
+    .about-img {
+        display: none
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+        gap: 1rem
+    }
+
+    footer {
+        flex-flow: wrap
+    }
+
+    .contact-content {
+        display: flex;
+        flex: 1;
+        flex-direction: column
+    }
+
+    .footer-img>img {
+        width: 100vw;
+        height: 120vw
+    }
+}
